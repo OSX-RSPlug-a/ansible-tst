@@ -1,0 +1,11 @@
+- name: Installing iptables
+  package:
+    name: iptables
+    state: latest
+
+- name: Installing 'iptables-persistent'
+  package:
+    name: "{{  item  }}"
+    state: present
+  with_items:
+   - iptables-persistent
